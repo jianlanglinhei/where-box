@@ -1,0 +1,59 @@
+<!--pages/home/index.wxml-->
+<view class="container">
+  <!-- 头部区域 -->
+  <view class="header">
+    <view class="logo-section">
+      <image class="logo" src="../../images/avatar.png" mode="aspectFit"></image>
+      <text class="app-name">WhereBox</text>
+    </view>
+    <text class="app-slogan">你的智能物品管理助手</text>
+  </view>
+
+  <!-- 用户信息区域 -->
+  <view class="user-section">
+    <view wx:if="{{hasUserInfo}}" class="user-info">
+      <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+      <text class="nickname">{{userInfo.nickName}}</text>
+    </view>
+    <button wx:else class="login-btn" bindtap="getUserProfile">
+      <text>登录/注册</text>
+    </button>
+  </view>
+
+  <!-- 功能卡片区域 -->
+  <view class="features-section">
+    <view class="section-title">快速开始</view>
+    
+    <view class="feature-card" bindtap="navigateToFeature">
+      <view class="card-content">
+        <view class="card-icon-wrapper">
+          <image class="card-icon" src="../../images/icons/home.png" mode="aspectFit"></image>
+        </view>
+        <view class="card-info">
+          <text class="card-title">云开发功能</text>
+          <text class="card-desc">探索云托管、云函数、数据库等功能</text>
+        </view>
+      </view>
+      <image class="arrow-icon" src="../../images/arrow.svg"></image>
+    </view>
+
+    <view class="feature-card" bindtap="navigateToExample">
+      <view class="card-content">
+        <view class="card-icon-wrapper">
+          <image class="card-icon" src="../../images/icons/examples.png" mode="aspectFit"></image>
+        </view>
+        <view class="card-info">
+          <text class="card-title">示例代码</text>
+          <text class="card-desc">查看各种功能的使用示例</text>
+        </view>
+      </view>
+      <image class="arrow-icon" src="../../images/arrow.svg"></image>
+    </view>
+  </view>
+
+  <!-- 底部说明 -->
+  <view class="footer">
+    <text class="footer-text">基于微信云开发构建</text>
+  </view>
+</view>
+
